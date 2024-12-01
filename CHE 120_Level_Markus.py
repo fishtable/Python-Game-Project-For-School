@@ -21,7 +21,7 @@ pygame.display.set_caption('Resizable')
 
 #create a matrix to position the map tiles!
 #MP: As the group member in charge of designing the more difficult of the two mazes, I investigated what size matrix would be needed
-#MP: as the base of an appropriately sized level, capable of an appropriatelt complex design without devolving into unnecessary convolusion.
+#MP: as the base of an appropriately sized level, capable of an appropriately complex design without devolving into unnecessary convolusion.
 #MP: A 25 by 25 grid was an appropriate scale to encompass the maze. In order to include an outer wall, this was expanded to 27 by 27.
 
 #MP: In addition to designing the matrix, the matrix_columns and matrix_rows variables were adjusted to allow the game's code to function on a level of the chosen size.
