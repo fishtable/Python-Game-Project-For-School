@@ -124,9 +124,7 @@ def posPlayer(row, column):
 
 
 
-#----this is where you edit player position----#
-#MP: Using the posPlayer() function, the starting position of the player was defined to fit the maze's layout. 
-#MP: Additionally, this same function call was used to center the screen on the player. 
+#MP: Using the posPlayer() function, the starting position of the player was defined to fit the maze's layout, and vital variables tied to this value were created and globalized. 
 posPlayer(3,9)
 
 
@@ -300,10 +298,9 @@ while True:
                 blockCollision()
 
 #----------------------------------------------------------------------------------------------------#
-            #syntax for makeDoor :D
             #makeDoor(color, number_in_matrix, current_column, current_row)
 
-            #you have to define the doors before checking their collision!
+            
             #MP: In the two function calls below, the two doors of the level are defined.  
             #MP: Each of these doors is, in addition to the columns and rows variables which contain the players current position,
             #MP: given two arguments. These are an integer which is used to represent it in the matrix, and a string containing one of pygame's basic colours.
@@ -318,7 +315,7 @@ while True:
 #----------------------------------------------------------------------------------------------------#
 
 
-            #if a player is going to run into a door, define door first! done above :)
+            #if a player is going to run into a door
             if matrix[rows][columns] > 1:
 
                 if plyr_key != door_dict[matrix[rows][columns]]:
@@ -354,15 +351,14 @@ while True:
                 screen.blit(grass, (columns*tile_size - x_pos, rows*tile_size - y_pos))
 
 #----------------------------------------------------------------------------------------------------#
-            #syntax for make key for our beautiful level designers (especially you marCus) What have I done to deserve such disrespect
             #makeKey(color, column_key, row_key, current_column, current_row)
             
-            #MP: The make Key function defines the keys which allow the player to pass through the doors without being stopped by the blockCollision() function.
+            #MP: The makeKey() function defines the keys which allow the player to pass through the doors without being stopped by the blockCollision() function.
             #MP: Unlike the Level's doors, the keys defined by the MakeKey() function do not have a value accociated with them 
             #MP: that can be placed in the matrix. Rather their function parameters include matrix coordinates which define where in the matrix the key should be superimposed.
             #MP: The columns and rows arguments once again serve to convey the players current position
             #MP: The colour parameter allows the key to be accociated to a door as defined by a makeDoor() function call.
-            #MP: As outlined just below the makeDoor function calls, the player moving into a usually results in a blockCollision() function call setting the player's speed to 0 and thereby stopping them.
+            #MP: As outlined just below the makeDoor function calls, the player moving into a door (a matrix element with a value > 1) usually results in a blockCollision() function call setting the player's speed to 0 and thereby stopping them.
             #MP: However, should the player have most recently come into contact with the appropriate key, and thereby have the plyr_key variable set to the door's accociated color as stored in the door_dict dictionary,
             #MP: a conditional prevents the blockCollision() function call and thereby lets the player pass through.
 
