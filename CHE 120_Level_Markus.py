@@ -1,4 +1,4 @@
-#Created by Ethan Nauta
+#Created by Markus Pollak, based on the framework of Ethan Nauta
 
 #--Resources Used--#:
 #https://youtu.be/QFvqStqPCRU?si=gmiGOuEnrZTYafuq -- video watched until 26:02 for help setting up methods for the game.
